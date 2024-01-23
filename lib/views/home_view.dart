@@ -44,7 +44,7 @@ class BodyView extends StatelessWidget {
         child: Text(
           "Hello Flutter",
           style: TextStyle(
-            fontSize: 35,
+            fontSize: 45,
             fontWeight: FontWeight.bold,
           ),
         ),
