@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
+import 'package:flutter_application_1/utils/routes.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,10 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter learn",
-      initialRoute: "/login",
+      initialRoute: Routes.loginRoute,
       routes: {
-        "/": (context) => HomePage(),
-        "/login": (context) => LoginPage(),
+        Routes.homeRute: (context) => HomePage(),
+        Routes.loginRoute: (context) => LoginPage(),
       },
     );
   }

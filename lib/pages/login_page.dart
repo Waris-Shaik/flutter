@@ -1,85 +1,125 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, annotate_overrides, avoid_unnecessary_containers, avoid_print
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, annotate_overrides, avoid_unnecessary_containers, avoid_print, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/utils/routes.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  String name = "";
+  String password = "";
+  bool _isButtonPressed = false;
   Widget build(BuildContext context) {
     return Material(
-      child: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            child: Image.asset(
-              "assets/images/login.png",
-              fit: BoxFit.cover,
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 10,
             ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-            child: Text(
-              "Please Login",
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                fontFamily: "kdam",
-                color: Colors.deepPurpleAccent,
+            Container(
+              child: Image.asset(
+                "assets/images/login.png",
+                fit: BoxFit.cover,
+                height: 300,
               ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.all(10),
-            child: Column(
-              children: [
-                TextFormField(
-                  decoration: InputDecoration(
-                    labelText: "User Name",
-                    hintText: "Enter User name",
-                  ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              child: Text(
+                "Please Login",
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "kdam",
+                  color: Colors.deepPurpleAccent,
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: "Password",
-                    hintText: "Enter Password",
-                    labelStyle: TextStyle(
-                      fontWeight: FontWeight.bold,
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(
+                      labelText: "User Name",
+                      hintText: "Enter User name",
                     ),
+                    onChanged: (value) {
+                      setState(() {
+                        name = value;
+                      });
+                    },
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      labelText: "Password",
+                      hintText: "Enter Password",
+                      labelStyle: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onChanged: (value) {
+                      setState(() {
+                        password = value;
+                      });
+                    },
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            InkWell(
+              onTap: () async {
+                setState(() {
+                  _isButtonPressed = !_isButtonPressed;
+                });
+
+                await Future.delayed(Duration(seconds: 2));
+                await Navigator.pushNamed(context, Routes.homeRute);
+                print("Clicked");
+
+                setState(() {
+                  _isButtonPressed = !_isButtonPressed;
+                });
+              },
+              child: AnimatedContainer(
+                duration: Duration(seconds: 1),
+                padding: EdgeInsets.symmetric(
+                    horizontal: _isButtonPressed ? 15.0 : 20.0, vertical: 10.0),
+                decoration: BoxDecoration(
+                  color: _isButtonPressed
+                      ? Colors.deepPurple
+                      : Colors.deepPurpleAccent,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5),
                   ),
                 ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          ElevatedButton(
-            onPressed: () {
-              print("Clicked");
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.deepPurpleAccent,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(8),
+                child: Text(
+                  "Login",
+                  style: TextStyle(
+                    fontSize: 19.8,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
-            child: Text(
-              "Login",
-              style: TextStyle(
-                fontSize: 19.8,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
