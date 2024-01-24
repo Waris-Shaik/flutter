@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter learn",
-      initialRoute: Routes.loginRoute,
+      initialRoute: Routes.homeRute,
       routes: {
         Routes.homeRute: (context) => HomePage(),
         Routes.loginRoute: (context) => LoginPage(),
