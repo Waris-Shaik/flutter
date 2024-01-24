@@ -88,7 +88,7 @@ flutter:
     - family: kdam
       fonts:
        - asset: assets\fonts\KdamThmorPro-Regular.ttf
-    - family: Space
+    - family: space
       fonts:
        - asset: assets\fonts\SpaceGrotesk-Bold.ttf
   #
