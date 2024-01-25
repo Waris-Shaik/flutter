@@ -1,0 +1,85 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Laptop",
+        "description": "Powerful laptop for work and entertainment.",
+        "price": 1299.99,
+        "color": "#3498db",
+        "image": "https://source.unsplash.com/300x200/?laptop"
+      },
+      {
+        "id": 2,
+        "name": "Smart TV",
+        "description": "High-definition smart TV with smart features.",
+        "price": 799.99,
+        "color": "#2ecc71",
+        "image": "https://source.unsplash.com/300x200/?smart-tv"
+      },
+      {
+        "id": 3,
+        "name": "Coffee Maker",
+        "description": "Automatic coffee maker for your daily brew.",
+        "price": 69.99,
+        "color": "#e74c3c",
+        "image": "https://source.unsplash.com/300x200/?coffee-maker"
+      },
+      {
+        "id": 4,
+        "name": "Bluetooth Headphones",
+        "description": "Wireless headphones for an immersive audio experience.",
+        "price": 129.99,
+        "color": "#9b59b6",
+        "image": "https://source.unsplash.com/300x200/?headphones"
+      },
+      {
+        "id": 5,
+        "name": "Digital Camera",
+        "description": "Capture memories with this advanced digital camera.",
+        "price": 499.99,
+        "color": "#f39c12",
+        "image": "https://source.unsplash.com/300x200/?camera"
+      },
+      {
+        "id": 6,
+        "name": "Fitness Tracker",
+        "description": "Stay fit with this feature-packed fitness tracker.",
+        "price": 79.99,
+        "color": "#1abc9c",
+        "image": "https://source.unsplash.com/300x200/?fitness-tracker"
+      },
+      {
+        "id": 7,
+        "name": "Wireless Keyboard & Mouse",
+        "description": "Enhance your productivity with this wireless combo.",
+        "price": 49.99,
+        "color": "#3498db",
+        "image": "https://source.unsplash.com/300x200/?keyboard"
+      },
+      {
+        "id": 8,
+        "name": "Robot Vacuum Cleaner",
+        "description": "Effortlessly clean your home with this robotic vacuum.",
+        "price": 199.99,
+        "color": "#2ecc71",
+        "image": "https://source.unsplash.com/300x200/?vacuum-cleaner"
+      },
+      {
+        "id": 9,
+        "name": "Gaming Console",
+        "description": "Immerse yourself in gaming with this powerful console.",
+        "price": 349.99,
+        "color": "#e74c3c",
+        "image": "https://source.unsplash.com/300x200/?gaming-console"
+      },
+      {
+        "id": 10,
+        "name": "Bluetooth Speaker",
+        "description": "Portable Bluetooth speaker for music on the go.",
+        "price": 59.99,
+        "color": "#9b59b6",
+        "image": "https://source.unsplash.com/300x200/?bluetooth-speaker"
+      }
+    ]
+  }
+  

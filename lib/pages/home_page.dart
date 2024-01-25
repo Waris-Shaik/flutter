@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, annotate_overrides
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/catalog.dart';
 import 'package:flutter_application_1/widgets/drawer.dart';
+import 'package:flutter_application_1/widgets/item.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,7 +13,8 @@ class HomePage extends StatelessWidget {
     const String avatar = "assets/images/Ryan Floence.jpeg";
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.white,
+        elevation: 0.0,
         title: Text(
           "Code Beast",
           style: TextStyle(
@@ -39,19 +42,11 @@ class BodyView extends StatelessWidget {
   const BodyView({super.key});
 
   Widget build(BuildContext context) {
-    return Container(
-      // color: Colors.amberAccent,
-      child: Center(
-        child: Text(
-          "Hello Coder.",
-          style: TextStyle(
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-            fontFamily: "federo",
-            fontStyle: FontStyle.italic,
-          ),
-        ),
-      ),
+    return ListView.builder(
+      itemCount: CatalogModel.products.length,
+      itemBuilder: (context, index) {
+        return ItemWidget(item: CatalogModel.products[index]);
+      },
     );
   }
 }
